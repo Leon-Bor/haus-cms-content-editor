@@ -1,0 +1,106 @@
+.haus-editor {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000000000;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  gap: 15px;
+  position: relative;
+}
+.haus-actions {
+  position: relative;
+  height: 50px;
+  .haus-lang {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1000000040;
+    transition: all 0.33s ease-in-out;
+    cursor: pointer;
+    &.haus-lang--hide {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+
+  .haus-current-lang {
+    position: absolute;
+    z-index: 1000000060;
+    bottom: 0px;
+    right: 0px;
+    border: solid 1px white;
+    border-radius: 50%;
+    background-color: white;
+    > .haus-flag-svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .haus-icon {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: all 0.33s ease-in-out;
+
+    &:hover {
+      filter: brightness(115%);
+    }
+    &.haus-icon--hide {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    > svg {
+      fill: white;
+      color: white;
+      width: 25px;
+      height: 25px;
+    }
+    &.haus-edit-icon {
+      background-color: #2980b9;
+      z-index: 1000000100;
+      &:hover {
+        transform: rotate(-8deg);
+      }
+    }
+    &.haus-language-icon {
+      background-color: #2980b9;
+      z-index: 1000000100;
+    }
+
+    &.haus-cancel-icon {
+      background-color: #e74c3c;
+      z-index: 100000050;
+    }
+    &.haus-accept-icon {
+      background-color: #27ae60;
+      z-index: 100000049;
+    }
+  }
+}
+
+/* editable elements */
+[contenteditable]:hover {
+  background-color: rgba(243, 156, 18, 0.1) !important;
+}
+[imageeditable]:hover {
+  outline: rgba(243, 156, 18, 0.1) 3px solid !important;
+  cursor: pointer;
+}
+.haus-element--focused {
+  background-color: rgba(243, 156, 18, 0.1) !important;
+  outline: none;
+}
