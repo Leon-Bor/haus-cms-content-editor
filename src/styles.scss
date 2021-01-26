@@ -6,7 +6,9 @@
   top: 15px;
   left: 15px;
   gap: 15px;
-  position: relative;
+  * {
+    box-sizing: border-box !important;
+  }
 }
 .haus-actions {
   position: relative;
@@ -51,8 +53,8 @@
     border-radius: 50%;
     background-color: white;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     transition: all 0.33s ease-in-out;
 
     &:hover {
@@ -97,7 +99,7 @@
   background-color: rgba(243, 156, 18, 0.1) !important;
 }
 [imageeditable]:hover {
-  outline: rgba(243, 156, 18, 0.1) 3px solid !important;
+  outline: rgba(18, 161, 243, 0.5) 3px solid !important;
   cursor: pointer;
 }
 .haus-element--focused {

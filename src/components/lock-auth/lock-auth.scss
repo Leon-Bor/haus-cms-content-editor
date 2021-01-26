@@ -1,0 +1,74 @@
+.haus-lock-auth {
+  position: relative;
+  &.haus-lock-auth--error {
+    .haus-lock-auth__input {
+      input {
+        border: 1px solid #ff0000;
+      }
+    }
+  }
+  .haus-lock-auth__input {
+    position: absolute;
+    top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: white;
+    height: 48px;
+    z-index: 1000000090;
+    padding-left: 60px;
+    border-radius: 25px;
+    padding-right: 5px;
+    overflow: hidden;
+    transition: all 0.33s ease-in-out;
+    border: 1px solid rgba(236, 236, 236, 0.384);
+    input {
+      outline: 0;
+      width: 245px;
+      border: 1px solid #d6d6d6;
+      padding: 3px 6px;
+      border-radius: 3px;
+    }
+    .haus-lock-auth__send {
+      width: 35px;
+      height: 35px;
+      svg {
+        fill: #2980b9;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: white;
+
+        &:hover {
+          filter: brightness(115%);
+        }
+      }
+    }
+  }
+
+  .haus-lock-auth__icon {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    transition: all 0.33s ease-in-out;
+    background-color: #2980b9;
+    z-index: 1000000100;
+    &:hover {
+      filter: brightness(115%);
+    }
+    > svg {
+      fill: white;
+      color: white;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
