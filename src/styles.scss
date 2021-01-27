@@ -97,8 +97,9 @@
 /* editable elements */
 [contenteditable]:hover {
   background-color: rgba(243, 156, 18, 0.1) !important;
+  color: black;
 }
-[imageeditable]:hover {
+[imageEditable]:hover {
   outline: rgba(18, 161, 243, 0.5) 3px solid !important;
   cursor: pointer;
 }

@@ -13,7 +13,7 @@ export const App = () => {
     }
   );
   const [isAuth, setIsAuth] = useState(
-    (localStorage.getItem('hausAddminToken') && settings?.adminToken === localStorage.getItem('hausAAinToken')) || false
+    (localStorage.getItem('hausAdminToken') && settings?.adminToken === localStorage.getItem('hausAdminToken')) || false
   );
   const [isEditiing, setIsEditiing] = useState(false);
   const [isSelectingLang, setIsSelectingLang] = useState(false);
@@ -25,7 +25,9 @@ export const App = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const edit = urlParams.get('edit');
-    setCookie('hausEdit', edit + '', 365);
+    if (edit) {
+      setCookie('hausEdit', edit + '', 365);
+    }
 
     //testing stugg
 
@@ -39,7 +41,7 @@ export const App = () => {
       setIsEditiing(true);
       console.log($);
       $('[data-haus-id]').attr('contenteditable', 'true');
-      $('[data-haus-img]').attr('imageeditable', 'true');
+      $('[data-haus-img]').attr('imageEditable', 'true');
       $('[data-haus-id]').on('input', function (this: any): void {
         console.log('Content changed: ' + $(this).attr('data-haus-id'));
         setEditedContent({ ...this.editedContent, [$(this).attr('data-haus-id') as string]: $(this).html() });
@@ -57,7 +59,7 @@ export const App = () => {
     } else {
       setIsEditiing(false);
       $('[data-haus-id]').removeAttr('contenteditable');
-      $('[data-haus-img]').removeAttr('imageeditable');
+      $('[data-haus-img]').removeAttr('imageEditable');
       if (acceptContent) {
         sendContent();
       } else {

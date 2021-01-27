@@ -12,9 +12,9 @@ export const LockAuth = ({ isAuth, onAuthenticate }: IProps): JSX.Element => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem('hausAdminToken') && !isAuth) {
-      onAuthenticate();
-    }
+    // if (localStorage.getItem('hausAdminToken') && !isAuth) {
+    //   onAuthenticate();
+    // }
   }, []);
 
   const onAuth = async () => {
